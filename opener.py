@@ -8,7 +8,7 @@ from threading import Timer
 
 # time is in 24-hour format
 current_time = datetime.today()
-check_in_time = current_time.replace(day= current_time.day, hour = current_time.hour, minute = 18, second = 0, microsecond = 0)
+check_in_time = current_time.replace(day= current_time.day, hour = current_time.hour, minute = 40, second = 0, microsecond = 0)
 change_in_time = check_in_time - current_time 
 
 print ('current_time date and time: ', current_time)
@@ -22,7 +22,8 @@ def open():
 		webbrowser.open_new_tab(url)  # Open URL in a new tab, if a browser window is already open.
 	except: 
 		webbrowser.open_new(url)
-	return "Check in page opened!"
+	print ("Check in page opened!")
+	return 
 
 time_watch = Timer(seconds, open)
 time_watch.start()
